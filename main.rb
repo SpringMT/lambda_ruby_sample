@@ -1,7 +1,7 @@
 require_relative "./response"
 
 def main(event:, context:)
-  res = Respone.new(event)
+  res = Response.new(event)
   return res.generate
 end
 
