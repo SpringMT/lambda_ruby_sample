@@ -1,0 +1,6 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - docker build -t $REPOSITORY_URI:$COMMIT_HASH .
