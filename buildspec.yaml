@@ -4,3 +4,6 @@ phases:
     commands:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - docker build -t $REPOSITORY_URI:$GITHUB_SHA .
+  post_build:
+    commands:
+      - docker push $REPOSITORY_URI:$GITHUB_SHA
