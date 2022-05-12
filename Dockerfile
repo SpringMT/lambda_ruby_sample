@@ -1,7 +1,7 @@
 FROM public.ecr.aws/lambda/ruby:2.7
 
 # Copy dependency management file
-COPY Gemfile Gemfile.lock ${LAMBDA_TASK_ROOT}
+COPY Gemfile Gemfile.lock ${LAMBDA_TASK_ROOT}/
 
 # Install dependencies under LAMBDA_TASK_ROOT
 ENV GEM_HOME=${LAMBDA_TASK_ROOT}
