@@ -39,8 +39,4 @@ jobs:
         with:
           project-name: lambda-ruby-sample-codebuild
           buildspec-override: buildspec.yaml
-          env-vars-for-codebuild: |
-            COMMIT_HASH
-        env:
-          COMMIT_HASH: ${{ github.sha }}
 
