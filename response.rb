@@ -4,7 +4,7 @@ class Response
   end
 
   def generate
-    query_string = event["queryStringParameters"]
+    query_string = @event["queryStringParameters"]
     {
       "statusCode": 200,
       "headers": {
