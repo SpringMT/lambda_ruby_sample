@@ -42,6 +42,7 @@ jobs:
       - name: Deploy lambda
         env:
           IMAGE_TAG: ${{ github.sha }}
+          REPOSITORY_URI: ${{ secrets.REPOSITORY_URI }}
         run: |
           aws lambda update-function-code --function-name LambdaRubySample --image-uri $REPOSITORY_URI:$IMAGE_TAG
 

@@ -3,7 +3,7 @@ FROM public.ecr.aws/lambda/ruby:2.7
 ENV GEM_HOME=${LAMBDA_TASK_ROOT}
 
 COPY Gemfile Gemfile.lock ${LAMBDA_TASK_ROOT}/
-RUN bash -l -c 'bundle config set without "development test" && bundle config set --local deployment "true" && bundle config set no-cache "true" && bundle install --no-cache --jobs 4'
+RUN bash -l -c 'bundle config set without "development test" && bundle config set --local deployment "true" && bundle config set no-cache "true" && bundle install --jobs 4'
 
 COPY main.rb response.rb ${LAMBDA_TASK_ROOT}/
 
