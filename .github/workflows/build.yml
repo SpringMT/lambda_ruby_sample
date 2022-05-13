@@ -38,7 +38,7 @@ jobs:
           env-vars-for-codebuild: |
             REPOSITORY_URI
         env:
-          REPOSITORY_URI: ${{ secret.REPOSITORY_URI }}
+          REPOSITORY_URI: ${{ secrets.REPOSITORY_URI }}
       - name: Deploy lambda
         env:
           IMAGE_TAG: ${{ github.sha }}
