@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      ruby: 2.7
+  pre_build:
+    commands:
+      - bundle install
+  build:
+    commands:
+      - bundle exec rspec --format RspecJunitFormatter -o tmp/rspec.xml --format progress
+reports:
+  rspec_reports:
+    files:
+      - rspec.xml
+    base-directory: tmp
+    file-format: JunitXml
+  simplecov_reports:
+    files:
+      - .resultset.json
+    base-directory: coverage
+    file-format: SimpleCov
+
