@@ -11,7 +11,7 @@ class Response
         "Content-Type": "application/json",
         "My-Custom-Header": "Custom Value"
       },
-      "body": "{ \"message\": \"Hello, world!\" #{query_string} }",
+      "body": "{ \"message\": \"Hello, world! 1\" #{query_string} }",
       "isBase64Encoded": false
     }
   end
